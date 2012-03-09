@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+  <title>Panama Lotto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+<link rel="stylesheet" href="styles/mobile.theme.r.css" />
+
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+<script src="lib/date.es.js" type="text/javascript" charset="utf-8"></script> 
+<script src="lib/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script> 
+<script src="lib/json2.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/amplify.core.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/amplify.store.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/spine.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/spine.local.using.amplify.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="js/models/LottoItem.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/controllers/HistoryController.js" type="text/javascript" charset="utf-8"></script>  
+<script src="js/lotto.core.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-122749-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- jQuery Template for history -->
+<script type="text/x-jquery-tmpl" id="historyItemHeaderTemplate">
+<li data-role="list-divider">${header}</li> 
+</script>
+<script type="text/x-jquery-tmpl" id="historyListTemplate">
+<li>
+	<div class="ui-lotto-item-title">${historyLabel()}</div>
+	<span class="ui-lotto-item-type">${lottoType}</span>
+	<span class="ui-lotto-item-numbers"><a data-ajax="false" href="recent.html?id=${lottoDate}" class="ui-link">${first} / ${second} / ${third}</a></span>
+</li> 
+</script>
+ </head>
+ <body>
+<div data-role="page" id="historyPage" data-theme="r">
+	<div data-role="header"  data-position="inline" data-theme="r" data-position="fixed">
+    <a href="index.html" data-role="button" data-icon="home">Inicio</a>
+		<h1>Panama Lotto</h1>
+	</div>    
+	<div data-role="content">	
+        <div style="text-align:center" id="errorMessage"></div>
+        <div>        
+        <ul data-role="listview" id="historyList" data-inset="true" data-filter="true" data-filter-placeholder="Buscar sorteos...">
+        </ul>
+        </div>
+    </div>
+
+</div>
+ </body>
+</html>

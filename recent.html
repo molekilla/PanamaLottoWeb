@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+  <title>Panama Lotto - Reciente</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+<link rel="stylesheet" href="styles/mobile.theme.r.css" />
+
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+
+<script src="lib/date.es.js" type="text/javascript" charset="utf-8"></script> 
+<script src="lib/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script> 
+<script src="lib/json2.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/amplify.core.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/amplify.store.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/spine.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/spine.local.using.amplify.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/models/LottoItem.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/controllers/RecentController.js" type="text/javascript" charset="utf-8"></script>  
+<script src="js/lotto.core.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/lotto.stats.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-122749-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- jQuery Template for recent lotto item -->
+<script type="text/x-jquery-tmpl" id="recentItemTemplate">        		
+<div class="ui-block-a"><div class="ui-lotto-item-title">1er premio</div></div> 
+<div class="ui-block-b"><div class="ui-lotto-item-numbers">${first}</div></div> 
+
+<div class="ui-block-a"><div class="ui-lotto-item-title">2do premio</div></div> 
+<div class="ui-block-b"><div class="ui-lotto-item-numbers">${second}</div></div> 
+
+<div class="ui-block-a"><div class="ui-lotto-item-title">3ro Premio</div></div> 
+<div class="ui-block-b"><div class="ui-lotto-item-numbers">${third}</div></div> 
+
+<div class="ui-block-a"><div class="ui-lotto-item-title">Letras</div></div> 
+<div class="ui-block-b"><div class="ui-lotto-item-numbers">${letras}</div></div> 
+
+<div class="ui-block-a"><div class="ui-lotto-item-title">Serie</div></div> 
+<div class="ui-block-b"><div class="ui-lotto-item-numbers">${serie}</div></div> 
+
+<div class="ui-block-a"><div class="ui-lotto-item-title">Folio</div></div> 
+<div class="ui-block-b"><div class="ui-lotto-item-numbers">${folio}</div></div> 
+</script>
+<script type="text/x-jquery-tmpl" id="graphTemplate">        		
+<div class="ui-block-a"><div class="ui-lotto-item-title">${key}</div></div> 
+<div class="ui-block-b"><div class="ui-lotto-item-numbers">${value}</div></div> 
+</script>
+ </head>
+ <body>
+<div data-role="page" id="recentPage" data-theme="r">
+
+	<div data-role="header"  data-position="inline" data-theme="r" data-position="fixed">
+    <a href="index.html" data-role="button" data-icon="home">Inicio</a>
+		<h1>Panama Lotto</h1>
+	</div>
+    
+	<div data-role="content" data-theme="r">	
+        <div style="text-align:center" id="errorMessage"></div>
+        <h5  id="recentTitle"></h5>
+        <div class="ui-grid-b" id="mostRecentLotto"></div>
+    </div>
+</div>
+ </body>
+</html>

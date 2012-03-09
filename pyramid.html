@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+  <title>jQuery App - Pyramid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" />
+<link rel="stylesheet" href="styles/mobile.theme.r.css" />
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script> 
+
+ </head>
+ <body>
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>My App</h1>
+	</div>
+
+	<div data-role="content">	
+		<p id="np-xml">Page content goes here.</p>
+        <ul data-role="listview">
+        <a href="recent.html">Reciente</a>
+        <a href="historydata.html">Anteriores</a>
+        <a href="pyramid.html">Piramide</a>
+        <a href="help.html">Ayuda</a>
+        </ul>
+	</div>
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+</div>
+<script>
+// Lotto Main js 
+ var URL = "http://query.yahooapis.com/v1/public/yql/LNB/LNB2?format=json";
+	$(function()
+		{
+			$.ajax(
+				{
+					type: 'GET',
+					url: URL, 
+					dataType: 'jsonp',
+					success: function(data, textStatus)
+					{
+						var xDoc = $('<items />');
+                        
+						for (var i=2;i<data.query.results.table.tr.length;i++ ) {                        
+							var lottoItem = data.query.results.table.tr[i];                                      
+							xDoc.append(
+								$('<lotto />').attr(
+									{
+										type: lottoItem.td[0].strong,
+										lottoDate: lottoItem.td[1].strong
+									}
+								)
+							);
+                        }
+						// Doesn't work on IE?
+						//$('#np-xml').val(xDoc.wrap('<wrap />').parent().html());
+						var wrappedDoc = $('<wrap />').append(xDoc);
+						$('#np-xml').text(wrappedDoc.html());
+					}
+				}
+			);
+		}
+	);
+</script> 
+ </body>
+</html>
