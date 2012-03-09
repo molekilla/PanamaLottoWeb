@@ -1,0 +1,157 @@
+/*!
+ * jQuery Mobile v1.0b3
+ * http://jquerymobile.com/
+ *
+ * Copyright 2010, jQuery Project
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ */
+/*
+* jQuery Mobile Framework
+* Copyright (c) jQuery Project
+* Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
+*/
+
+
+/* R
+-----------------------------------------------------------------------------------------------------------*/
+
+.ui-lotto-item-title {
+	color: #319331;
+	font-weight:bold;
+	font-size: 90%; 
+	
+}
+.ui-lotto-item-type {
+	color: #246E6E;
+	font-weight:bold;
+	font-size: 80%; 
+}
+.ui-lotto-item-numbers {
+	color: #3B8686 ;
+	font-weight:bold;
+	font-size: 100%;
+}
+
+.ui-lotto-item-numbers a:link  {
+	text-decoration: none;
+	color: #3B8686 ;
+}
+.ui-lotto-item-numbers a:visited  {
+	text-decoration: none;
+	color: #3B8686 ;
+}
+.ui-lotto-item-numbers a:active  {
+	text-decoration: none;
+	color: #3B8686 ;
+}
+
+.ui-bar-r {
+	border: 1px solid 		#2A2A2A;
+	background: 			#319331;
+	color: 					#ffffff;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px #000000;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#4FB34F), to(#319331)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #4FB34F, #319331); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #4FB34F, #319331); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #4FB34F, #319331); /* IE10 */
+	background-image:      -o-linear-gradient(top, #4FB34F, #319331); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #4FB34F, #319331);
+}
+.ui-bar-r, 
+.ui-bar-r input, 
+.ui-bar-r select, 
+.ui-bar-r textarea, 
+.ui-bar-r button {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.ui-bar-r .ui-link-inherit {
+	color: 					#fff;
+}
+.ui-bar-r .ui-link {
+	color: 					#7cc4e7;
+	font-weight: bold;
+}
+.ui-body-r {
+	border: 1px solid 		#C6C6C6;
+	background: 			#ffffff;
+	color: 					#333333;
+	text-shadow: 0 1px 0 	#fff;
+	font-weight: normal;
+
+}
+.ui-body-r,
+.ui-body-r input,
+.ui-body-r select,
+.ui-body-r textarea,
+.ui-body-r button {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.ui-body-r .ui-link-inherit {
+	color: 					#fff;
+}
+.ui-body-r .ui-link {
+	color: 					#2489CE;
+	font-weight: bold;
+}
+.ui-br {
+	border-bottom: rgb(130,130,130);
+	border-bottom: rgba(130,130,130,.3);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+.ui-btn-up-r {
+	border: 1px solid 		#145072;
+	background: 			#2567ab;
+	font-weight: bold;
+	color: 					#fff;
+	text-shadow: 0 -1px 1px #145072;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#5f9cc5), to(#396b9e)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #5f9cc5, #396b9e); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #5f9cc5, #396b9e); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #5f9cc5, #396b9e); /* IE10 */
+	background-image:      -o-linear-gradient(top, #5f9cc5, #396b9e); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #5f9cc5, #396b9e);
+}
+.ui-btn-up-r a.ui-link-inherit {
+	color: 					#fff;
+}
+.ui-btn-hover-r {
+	border: 1px solid 		#00516e;
+	background: 			#4b88b6;
+	font-weight: bold;
+	color: 					#fff;
+	text-shadow: 0 -1px 1px #014D68;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#72b0d4), to(#4b88b6)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #72b0d4, #4b88b6); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #72b0d4, #4b88b6); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #72b0d4, #4b88b6); /* IE10 */
+	background-image:      -o-linear-gradient(top, #72b0d4, #4b88b6); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #72b0d4, #4b88b6);
+}
+.ui-btn-hover-r a.ui-link-inherit {
+	color: 					#fff;
+}
+.ui-btn-down-r {
+	border: 1px solid 		#225377;
+	background: 			#4e89c5;
+	font-weight: bold;
+	color: 					#fff;
+	text-shadow: 0 -1px 1px #225377;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#396b9e), to(#4e89c5)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #396b9e, #4e89c5); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #396b9e, #4e89c5); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #396b9e, #4e89c5); /* IE10 */
+	background-image:      -o-linear-gradient(top, #396b9e, #4e89c5); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #396b9e, #4e89c5);
+}
+.ui-btn-down-r a.ui-link-inherit {
+	color: 					#fff;
+}
+.ui-btn-up-r,
+.ui-btn-hover-r,
+.ui-btn-down-r {
+	font-family: Helvetica, Arial, sans-serif;
+	text-decoration: none;
+}
