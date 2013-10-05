@@ -1,6 +1,8 @@
 // Lotto Main js 
     var URL = "http://query.yahooapis.com/v1/public/yql/LNB/LNB2?format=json";
 
+
+
     // index page 
 	$('#indexPage').live('pagecreate',function(event, ui) {    
 		$('#refreshData12').live('click', function(event, ui) {
