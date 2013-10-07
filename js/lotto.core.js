@@ -1,6 +1,6 @@
 // Lotto Main js 
-    var URL = "http://query.yahooapis.com/v1/public/yql/LNB/LNB2?format=json";
-
+    //var URL = "http://query.yahooapis.com/v1/public/yql/LNB/LNB2?format=json";
+var URL = 'http://localhost:3000/api/gob/loteria/numeros'
 
 
     // index page 
@@ -266,18 +266,18 @@
         },
         
         syncData: function(data){
-        	$.each(data.query.results.table.tr, function(i, lottoItem) {                        
-                if ( i > 1 ) {                              
+        	$.each(data.sorteos, function(i, lottoItem) {
+                if ( i > -1 ) {                     
                     // spine class                
                     var instanceItem = LottoItem.init({
-                        lottoType: lottoItem.td[0].strong,
-                        lottoDate: lottoItem.td[1].strong,
-                        first: lottoItem.td[2].strong,
-                        letras: lottoItem.td[3].strong,
-                        serie: lottoItem.td[4].strong,
-                        folio: lottoItem.td[5].strong,
-                        second: lottoItem.td[7].strong,
-                        third: lottoItem.td[10].strong
+                        lottoType: lottoItem.tipo,
+                        lottoDate: lottoItem.fecha,
+                        first: lottoItem.primero.numero,
+                        letras: lottoItem.primero.letras,
+                        serie: lottoItem.primero.serie,
+                        folio: lottoItem.primero.folio,
+                        second: lottoItem.segundo.numero,
+                        third: lottoItem.tercero.numero
                     });   
                     var found = LottoItem.select(function(l) {
                                     if ( l.lottoDate == instanceItem.lottoDate) return true; 
