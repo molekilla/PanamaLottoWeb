@@ -1,0 +1,18 @@
+{
+  "name": "PanamaLottoWeb",
+  "dependencies": {
+    "backbone": "1.0",
+    "bootstrap": "3.0",
+    "handlebars": null,
+    "jquery" : "1.10",
+    "requirejs" : null,
+    "underscore" : "1.5.2"
+    },
+  "version": "1.1.0",
+  "ignore": [
+    "**/.*",
+    ".jshintrc",
+    "node_modules",
+    "components"
+  ]
+}
