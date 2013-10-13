@@ -15,4 +15,4 @@ node_modules
 npm-debug.log
 .DS-Store
 coverage.html
-js/libs
+js/vendor
