@@ -85,9 +85,10 @@ module.exports = function(grunt) {
         },
         files: [
           'js/**/*.{css, js}',
+          'js/templates/*.html',
           '*.html'
         ],
-        tasks: ['jshint']
+        tasks: ['jshint', 'handlebars']
       },
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
