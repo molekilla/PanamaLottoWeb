@@ -106,12 +106,12 @@ module.exports = function(grunt) {
        compile: {
          options: {
           processName: function(filename) {
-            return filename.replace(".html","").replace("public/javascripts/templates/","");
+            return filename.replace(".html","").replace("js/templates/","");
           },
-           namespace: "App.Templates"
+           amd: true
          },
          files: {
-           "public/javascripts/templates.js": ["public/javascripts/templates/**/*.html"]
+           "js/templates/compiled.js": ["js/templates/**/*.html"]
          }
        }
      },
