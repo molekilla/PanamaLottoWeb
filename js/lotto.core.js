@@ -1,6 +1,6 @@
 // Lotto Main js 
     //var URL = "http://query.yahooapis.com/v1/public/yql/LNB/LNB2?format=json";
-var URL = 'http://localhost:3000/api/gob/loteria/numeros'
+var URL = 'http://panamenio.herokuapp.com/api/gob/loteria/numeros'
 
 
     // index page 
