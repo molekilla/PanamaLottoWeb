@@ -4,7 +4,8 @@ require.config({
       "underscore": "vendor/underscore/underscore-min",
       "backbone": "vendor/backbone/backbone-min",
       "handlebars": "vendor/handlebars/handlebars",
-      "bootstrap": "vendor/bootstrap/dist/js/bootstrap.min"
+      "bootstrap": "vendor/bootstrap/dist/js/bootstrap.min",
+      "moment" : "vendor/momentjs/min/moment-with-langs.min"
     },
     shim: {
       'underscore': {

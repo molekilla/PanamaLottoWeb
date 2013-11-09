@@ -18,7 +18,15 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/**/*.js'],
+        src: [
+        'js/collections/*.js',
+        'js/models/*.js',
+        'js/routers/*.js',
+        'js/templates/*.js',
+        'js/vendor/**/*.js',
+        'js/views/*.js',
+        'js/*.js'
+        ],
         dest: 'dist/<%= pkg.title || pkg.name %>.js'
       }
     },
@@ -52,7 +60,7 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       lib_test: {
-        src: ['js/**/*.js', '*.html']
+        src: ['js/views/*.js', 'js/models/*.js', 'js/*.js']
       }
     },
     jasmine_node: {
@@ -84,8 +92,12 @@ module.exports = function(grunt) {
           livereload: true
         },
         files: [
-          'js/**/*.{css, js}',
+          'js/collections/*.js',
+          'js/models/*.js',
+          'js/routers/*.js',
+          'js/views/*.js',
           'js/templates/*.html',
+          'js/*.js',
           '*.html'
         ],
         tasks: ['jshint', 'handlebars']
@@ -132,6 +144,20 @@ module.exports = function(grunt) {
         }
       }
      },
+     requirejs: {
+       compile: {
+         options: {
+           name: 'main',
+           optimize: "uglify2",
+           baseUrl: "js",
+           mainConfigFile: "js/main.js",
+           out: "dist/main.js",
+           paths: {
+               "jquery": "vendor/jquery/jquery"
+           }
+         }
+       }
+     },
      connect: {
        server: {
          options: {
@@ -154,11 +180,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
+
   
   grunt.registerTask('start', ['connect']);
   grunt.registerTask('dev', ['handlebars','concurrent:target']);
-  grunt.registerTask('build', ['concat', 'uglify']);
-  grunt.registerTask('specs', ['jasmine_node','jasmine', 'jshint']);
+  grunt.registerTask('build', ['requirejs']);
+  grunt.registerTask('specs', ['jasmine', 'jshint']);
 
   // Default task.
   //grunt.registerTask('default', ['jasmine_node', 'jshint', 'handlebars', 'jasmine', 'concat', 'uglify']);

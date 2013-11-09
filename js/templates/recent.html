@@ -1,20 +1,30 @@
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          {{ model.title }}
+      <h3 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion">
+          {{ model.attributes.displayDate }}
         </a>
-        <span class="label label-default pull-right">Dominical</span>
-        <span class="label label-primary pull-right">Inter</span>
-      </h4>
+        <span class="label label-success pull-right">{{ model.attributes.tipo }}</span>
+      </h3>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div class="panel-collapse collapse in">
       <div class="panel-body">   
-        asasass
-        assasa
-        asa
+        <div class="row">
+          <div class="col-xs-6 col-sm-4">Primer premio</div>
+          <div class="col-xs-6 col-sm-6">{{ model.attributes.primero.numero }}
+            <span class="label label-info">Serie {{ model.attributes.primero.serie }}</span>
+            <span class="label label-info">Folio {{ model.attributes.primero.folio }}</span>
+            <span class="label label-info">{{ model.attributes.primero.letras }}</span>
+          </div>
         </div>
-        Odometer JS
+        <div class="row">
+          <div class="col-xs-6 col-sm-4">Segundo premio</div>
+          <div class="col-xs-6 col-sm-6">{{ model.attributes.segundo.numero }}</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-sm-4">Tercer premio</div>
+          <div class="col-xs-6 col-sm-6">{{ model.attributes.tercero.numero }}</div>
+        </div>
       </div>
     </div>
   </div>

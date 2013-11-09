@@ -1,6 +1,7 @@
 define(function(require) {
     var Backbone = require('backbone');
     var RecentView = require('views/recent');
+    var HistoryView = require('views/history');
     var LottoNumbers = require('collections/LottoNumberCollection');
     var Router = Backbone.Router.extend({
       
@@ -14,6 +15,7 @@ define(function(require) {
 
       index: function(options) {
         var self = this;
+        var history = new HistoryView({ collection: self.collection, el: $(".history") });
         this.collection.fetch({
           dataType: "jsonp",
           success: function() {
